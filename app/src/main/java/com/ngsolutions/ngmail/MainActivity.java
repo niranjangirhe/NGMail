@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
         if (user != null) {
             Intent intent = new Intent(MainActivity.this,HomePage.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("from",0);
             startActivity(intent);
             finish();
         }
 
         BtnGetOtp.setOnClickListener(v -> {
             String Phone = EditGetPhone.getText().toString().trim();
-            if(Phone.length()!=10)
+            if(Phone.length()<10)
                 Toast.makeText(getApplicationContext(), "Invalid Phone Number", Toast.LENGTH_SHORT).show();
             else
             {

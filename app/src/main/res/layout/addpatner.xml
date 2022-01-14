@@ -19,6 +19,7 @@
         android:id="@+id/btnaddpartner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:text="Add Patner"
         app:layout_constraintEnd_toEndOf="@+id/editpartnerno"
         app:layout_constraintStart_toStartOf="@+id/editpartnerno"
@@ -28,7 +29,6 @@
         android:id="@+id/textpartnerstatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Searching"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editpartnerno" />

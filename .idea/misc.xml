@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/activity_enter_otp.xml" value="0.25" />
-        <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
+        <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/activity_home_page.xml" value="0.2" />
         <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/add_details.xml" value="0.25" />
         <entry key="..\:/Users/niran/AndroidStudioProjects/NGMail/app/src/main/res/layout/addpatner.xml" value="0.25" />
       </map>
     </option>

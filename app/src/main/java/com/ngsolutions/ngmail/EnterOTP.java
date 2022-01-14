@@ -83,7 +83,7 @@ public class EnterOTP extends AppCompatActivity {
         };
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(Auth)
-                        .setPhoneNumber("+91"+Phone)       // Phone number to verify
+                        .setPhoneNumber(Phone)       // Phone number to verify
                         .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
                         .setActivity(this)                 // Activity (for callback binding)
                         .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
@@ -119,27 +119,36 @@ public class EnterOTP extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     // Create a new user with a first and last name
+                    String UID = Auth.getUid();
                     Map<String, Object> user = new HashMap<>();
                     user.put("Phone", Phone);
-                    user.put("UID", FirebaseAuth.getInstance().getUid());
-                    db.collection("users")
-                            .add(user)
-                            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    user.put("UID",UID);
+
+
+                    db.collection("users").document(Phone)
+                            .set(user)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onSuccess(DocumentReference documentReference) {
-                                    Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+                                public void onSuccess(Void aVoid) {
+                                    Intent intent = new Intent(EnterOTP.this,HomePage.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    intent.putExtra("from",1);
+                                    startActivity(intent);
+                                    finish();
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
-                                    Log.w("TAG", "Error adding document", e);
+                                    Toast.makeText(getApplicationContext(), "Error Adding you in database. Please retry", Toast.LENGTH_SHORT).show();
+                                    new Handler().postDelayed(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            finish();
+                                        }
+                                    }, 3000);
                                 }
                             });
-                    Intent intent = new Intent(EnterOTP.this,HomePage.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    finish();
                 }
                 else
                 {
