@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "526562291526",
+    "project_id": "n-75ec9",
+    "storage_bucket": "n-75ec9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526562291526:android:86f20a091e0ef829753f47",
+        "android_client_info": {
+          "package_name": "com.ngsolutions.ngmail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "526562291526-c0om1hubm4uq6uv0m3pakdqkd9lqrmjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIwRiWN1l2TZfUWGSiaGWtJY8ctScNCAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "526562291526-c0om1hubm4uq6uv0m3pakdqkd9lqrmjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
